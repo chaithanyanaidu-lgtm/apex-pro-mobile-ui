@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&family=Manrope:wght@200;300;400;500;600;700;800&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-headline: "Space Grotesk", sans-serif;
+  --font-body: "Manrope", sans-serif;
+  --font-label: "Inter", sans-serif;
+
+  --color-primary: #ffb59d;
+  --color-primary-container: #ff6b35;
+  --color-on-primary: #5d1900;
+  --color-on-primary-container: #5f1900;
+  
+  --color-secondary: #d2bbff;
+  --color-secondary-container: #6001d1;
+  --color-on-secondary: #3f008e;
+  --color-on-secondary-container: #c9aeff;
+
+  --color-tertiary: #c0c1ff;
+  --color-tertiary-container: #8b8eff;
+  --color-on-tertiary: #1100a9;
+  --color-on-tertiary-container: #1200ad;
+
+  --color-surface: #12121d;
+  --color-surface-dim: #12121d;
+  --color-surface-bright: #383845;
+  --color-surface-container: #1f1e2a;
+  --color-surface-container-low: #1b1a26;
+  --color-surface-container-high: #292935;
+  --color-surface-container-highest: #343440;
+  --color-surface-container-lowest: #0d0d18;
+  
+  --color-on-surface: #e3e0f1;
+  --color-on-surface-variant: #e1bfb5;
+  --color-outline: #a98a80;
+  --color-outline-variant: #594139;
+
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-surface/60 backdrop-blur-xl;
+  }
+  .glass-card {
+    @apply bg-surface-container-high/60 backdrop-blur-md border border-outline-variant/10 shadow-lg;
+  }
+  .hero-gradient {
+    background: linear-gradient(0deg, rgba(13,13,24,1) 0%, rgba(13,13,24,0) 100%);
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .text-glow {
+    text-shadow: 0 0 15px rgba(255, 107, 53, 0.4);
+  }
+  .chart-glow {
+    filter: drop-shadow(0 0 8px rgba(210, 187, 255, 0.4));
+  }
+}
+
+body {
+  @apply bg-surface-container-lowest text-on-surface font-body;
+  min-height: 100dvh;
+}
